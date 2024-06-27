@@ -77,7 +77,7 @@ export async function contactClanta(prevState: any, formData: FormData) {
 
 export async function sendClantasResponse(body: { [key: string]: string }) {
   await resend.emails.send({
-    from: fromEmail,
+    from: `Clanta <${fromEmail}>`,
     to: body.email,
     subject: `Dear ${body.firstName} ${body.lastName}`,
     react: ResponseEmailTemplate({ body }),
