@@ -52,13 +52,13 @@ export default function ContactForm() {
         required
       />
       <CheckboxInput
-        label="Are you the Clinch?"
-        name="isClinch"
-      />
-      <CheckboxInput
         label="Send me clay facts"
         name="subscribed"
         defaultChecked
+      />
+      <CheckboxInput
+        label="I'm not the Clinch"
+        name="notClinch"
       />
       <FormMessage
         message={state.message}

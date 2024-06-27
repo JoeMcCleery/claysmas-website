@@ -16,13 +16,20 @@ export async function contactClanta(prevState: any, formData: FormData) {
     lastName: z.string().min(1),
     email: z.string().email(),
     request: z.string().min(1),
-    isClinch: z.string().optional(),
+    notClinch: z.string(),
     subscribed: z.string().optional(),
   });
 
   const parse = schema.safeParse(Object.fromEntries(formData));
 
   if (!parse.success) {
+    if (parse.error.flatten().fieldErrors.notClinch) {
+      return {
+        error: true,
+        message: "Get the fuck out of here you dirty Clinch!",
+      };
+    }
+
     return {
       error: true,
       message: Array.from(
@@ -32,13 +39,6 @@ export async function contactClanta(prevState: any, formData: FormData) {
   }
 
   const body = parse.data;
-
-  if (body.isClinch == "on") {
-    return {
-      error: true,
-      message: "Get the fuck out of here you dirty Clinch!",
-    };
-  }
 
   try {
     const { error: contactError } = await resend.contacts.create({
