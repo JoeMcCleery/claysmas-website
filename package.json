@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "email": "email dev --dir=./src/emails"
   },
   "dependencies": {
     "@react-email/components": "0.0.19",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-email": "2.1.4"
+    "react-email": "2.1.4",
+    "resend": "^3.4.0",
+    "zod-form-data": "^2.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
