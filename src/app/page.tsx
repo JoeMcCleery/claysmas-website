@@ -9,10 +9,14 @@ export default function Home() {
         background: `repeat center/500px url(${BackgroundImage.src})`,
       }}
     >
-      <div className="absolute inset-0 bg-black/50"></div>
-      <div className="mx-auto max-w-md p-6 bg-gray-800/80 rounded backdrop-blur-lg text-white">
-        <h1 className="text-5xl font-bold text-center mb-6">Merry Claysmas!</h1>
-        <ContactForm />
+      <div className="absolute inset-0 bg-black/60"></div>
+      <div>
+        <h1 className="text-5xl font-bold text-center my-8 text-white relative">
+          Merry Claysmas!
+        </h1>
+        <div className="mx-auto max-w-md p-6 bg-gray-800/80 rounded backdrop-blur-lg text-white">
+          <ContactForm />
+        </div>
       </div>
     </main>
   );
