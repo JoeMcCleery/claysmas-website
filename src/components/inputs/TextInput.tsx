@@ -29,7 +29,7 @@ export default function TextInput({
         name={name}
         defaultValue={defaultValue}
         required={required}
-        className="border p-1 rounded"
+        className="border p-1 rounded text-gray-900 bg-white"
       />
     </VerticalInputContainer>
   );
