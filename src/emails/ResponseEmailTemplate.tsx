@@ -38,7 +38,7 @@ export default function ResponseEmailTemplate({
           {getsGrit ? (
             <>
               <Heading as="h2">You have not been nice! 😡</Heading>
-              <Text>Cop a handful of grit in your eyes ya cunt! ⌛👁️</Text>
+              <Text>Cop a handful of grit in your eyes! ⌛👁️</Text>
             </>
           ) : (
             <>

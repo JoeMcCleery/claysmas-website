@@ -26,7 +26,7 @@ export async function contactClanta(prevState: any, formData: FormData) {
     if (parse.error.flatten().fieldErrors.notClinch) {
       return {
         error: true,
-        message: "Get the fuck out of here you dirty Clinch!",
+        message: "Go back to your hole you Clinch!",
       };
     }
 
