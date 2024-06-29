@@ -12,6 +12,7 @@ export default function ContactEmailTemplate({
     email: "test@test.com",
     request: "Clay Anything",
     subscribed: "on",
+    getsGrit: "on",
   },
 }: ContactEmailTemplateProps) {
   const data = Object.entries(body).map(([key, value]) => ({ key, value }));

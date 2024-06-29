@@ -18,12 +18,15 @@ export async function contactClanta(prevState: any, formData: FormData) {
     request: z.string().min(1),
     notClinch: z.string(),
     subscribed: z.string().optional(),
+    getsGrit: z.string().optional(),
   });
 
   const parse = schema.safeParse(Object.fromEntries(formData));
 
   if (!parse.success) {
-    if (parse.error.flatten().fieldErrors.notClinch) {
+    const fieldErrors = parse.error.flatten().fieldErrors;
+
+    if (fieldErrors.notClinch) {
       return {
         error: true,
         message: "Go back to your hole you Clinch!",
@@ -32,9 +35,9 @@ export async function contactClanta(prevState: any, formData: FormData) {
 
     return {
       error: true,
-      message: Array.from(
-        Object.entries(parse.error.flatten().fieldErrors)
-      ).map(([key, val]) => `${key}: ${val}`),
+      message: Array.from(Object.entries(fieldErrors)).map(
+        ([key, val]) => `${key}: ${val}`
+      ),
     };
   }
 
@@ -52,6 +55,10 @@ export async function contactClanta(prevState: any, formData: FormData) {
     if (contactError) {
       return { error: true, message: contactError.message };
     }
+
+    if (Math.random() < 0.5) body.getsGrit = "Straight in the eyeball!";
+
+    console.log(body.getsGrit);
 
     const { error: emailError } = await resend.emails.send({
       from: fromEmail,

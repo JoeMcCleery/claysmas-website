@@ -12,11 +12,11 @@ export default function ResponseEmailTemplate({
     email: "test@test.com",
     request: "Clay Anything",
     subscribed: "on",
+    getsGrit: "on",
   },
 }: ResponseEmailTemplateProps) {
   const fullName = `${body["firstName"]} ${body["lastName"]}`;
-  const getsGrit = Math.random() < 0.5;
-  const signOff = getsGrit ? "From Clanta 🖕" : "From Clanta with love ❤️";
+  const signOff = body.getsGrit ? "From Clanta 🖕" : "From Clanta with love ❤️";
 
   return (
     <EmailTemplate
@@ -33,7 +33,7 @@ export default function ResponseEmailTemplate({
         </Section>
 
         <Section>
-          {getsGrit ? (
+          {body.getsGrit ? (
             <>
               <Heading as="h2">You have not been nice! 😡</Heading>
               <Text>Cop a handful of grit in your eyes! ⌛👁️</Text>
