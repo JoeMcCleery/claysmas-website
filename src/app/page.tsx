@@ -4,7 +4,7 @@ import BackgroundImage from "@/assets/background.jpg";
 export default function Home() {
   return (
     <main
-      className="relative grid grid-cols-[1fr] min-h-screen p-2 justify-center items-center"
+      className="relative grid grid-cols-[1fr] min-h-screen p-6 justify-center items-center"
       style={{
         background: `repeat center/500px url(${BackgroundImage.src})`,
       }}
