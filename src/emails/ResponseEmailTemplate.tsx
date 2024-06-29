@@ -15,7 +15,7 @@ export default function ResponseEmailTemplate({
   },
 }: ResponseEmailTemplateProps) {
   const fullName = `${body["firstName"]} ${body["lastName"]}`;
-  const getsGrit = Math.random() < 0.2;
+  const getsGrit = Math.random() < 0.3;
   const signOff = getsGrit
     ? "Go fuck yourself 🖕 From Clanta"
     : "From Clanta with love ❤️";
