@@ -17,7 +17,7 @@ export default function Button({ children, type }: ButtonProps) {
     <button
       type={type || "button"}
       disabled={submitPending}
-      className="flex gap-2 justify-center items-center bg-gray-200 rounded px-4 py-2 transition-colors hover:bg-gray-300 active:bg-gray-400 disabled:bg-gray-400 disabled:text-gray-500"
+      className="border flex text-gray-800 gap-2 justify-center items-center bg-white rounded px-4 py-2 transition-colors hover:bg-gray-200 active:bg-gray-300 disabled:bg-gray-400 disabled:text-gray-500"
     >
       {children}
       {submitPending && (
