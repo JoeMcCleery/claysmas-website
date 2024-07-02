@@ -10,7 +10,7 @@ export default function Home() {
       }}
     >
       <div className="absolute inset-0 bg-black/60"></div>
-      <div>
+      <div className="relative">
         <h1 className="text-5xl font-bold text-center my-8 text-white relative">
           Merry Claysmas!
         </h1>
